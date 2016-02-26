@@ -1,0 +1,6 @@
+framework module Pods_TestHaneke {
+  umbrella header "Pods-TestHaneke-umbrella.h"
+
+  export *
+  module * { export * }
+}

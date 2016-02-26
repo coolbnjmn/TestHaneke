@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import Haneke
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        CachingManager.sharedInstance.fetchAllThings({
+            result in
+            // result should be an array of objects
+            print(result)
+        })
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,4 +28,3 @@ class ViewController: UIViewController {
 
 
 }
-

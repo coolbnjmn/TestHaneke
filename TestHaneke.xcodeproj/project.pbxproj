@@ -12,9 +12,14 @@
 		773179171C80E193002C78D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 773179151C80E193002C78D7 /* Main.storyboard */; };
 		773179191C80E193002C78D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 773179181C80E193002C78D7 /* Assets.xcassets */; };
 		7731791C1C80E193002C78D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7731791A1C80E193002C78D7 /* LaunchScreen.storyboard */; };
+		77C7D6E61C80E41800309CD6 /* CachingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C7D6E51C80E41800309CD6 /* CachingManager.swift */; };
+		8BF552623C742359C8303F1D /* Pods_TestHaneke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0699FB4AD7EF2F8C7C7A6C2B /* Pods_TestHaneke.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0699FB4AD7EF2F8C7C7A6C2B /* Pods_TestHaneke.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestHaneke.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		24710F80D15AA06451D59D98 /* Pods-TestHaneke.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestHaneke.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestHaneke/Pods-TestHaneke.debug.xcconfig"; sourceTree = "<group>"; };
+		335CF46F82C93564565BD7B4 /* Pods-TestHaneke.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestHaneke.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestHaneke/Pods-TestHaneke.release.xcconfig"; sourceTree = "<group>"; };
 		7731790E1C80E193002C78D7 /* TestHaneke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestHaneke.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		773179111C80E193002C78D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		773179131C80E193002C78D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +27,7 @@
 		773179181C80E193002C78D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7731791B1C80E193002C78D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7731791D1C80E193002C78D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77C7D6E51C80E41800309CD6 /* CachingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachingManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BF552623C742359C8303F1D /* Pods_TestHaneke.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0733DE7439D938C218F88831 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				24710F80D15AA06451D59D98 /* Pods-TestHaneke.debug.xcconfig */,
+				335CF46F82C93564565BD7B4 /* Pods-TestHaneke.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		2F6AF77CE7E88AA3BFF39B7C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0699FB4AD7EF2F8C7C7A6C2B /* Pods_TestHaneke.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		773179051C80E193002C78D7 = {
 			isa = PBXGroup;
 			children = (
 				773179101C80E193002C78D7 /* TestHaneke */,
 				7731790F1C80E193002C78D7 /* Products */,
+				0733DE7439D938C218F88831 /* Pods */,
+				2F6AF77CE7E88AA3BFF39B7C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +86,7 @@
 				773179181C80E193002C78D7 /* Assets.xcassets */,
 				7731791A1C80E193002C78D7 /* LaunchScreen.storyboard */,
 				7731791D1C80E193002C78D7 /* Info.plist */,
+				77C7D6E51C80E41800309CD6 /* CachingManager.swift */,
 			);
 			path = TestHaneke;
 			sourceTree = "<group>";
@@ -71,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 773179201C80E193002C78D7 /* Build configuration list for PBXNativeTarget "TestHaneke" */;
 			buildPhases = (
+				7E737213D3BE94B610626001 /* Check Pods Manifest.lock */,
 				7731790A1C80E193002C78D7 /* Sources */,
 				7731790B1C80E193002C78D7 /* Frameworks */,
 				7731790C1C80E193002C78D7 /* Resources */,
+				C5936EA06EF1CCC968CF0874 /* Copy Pods Resources */,
+				95423ECBA6B1B0B52F2A9678 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,6 +160,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7E737213D3BE94B610626001 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		95423ECBA6B1B0B52F2A9678 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestHaneke/Pods-TestHaneke-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C5936EA06EF1CCC968CF0874 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestHaneke/Pods-TestHaneke-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7731790A1C80E193002C78D7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -137,6 +215,7 @@
 			files = (
 				773179141C80E193002C78D7 /* ViewController.swift in Sources */,
 				773179121C80E193002C78D7 /* AppDelegate.swift in Sources */,
+				77C7D6E61C80E41800309CD6 /* CachingManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,23 +326,30 @@
 		};
 		773179211C80E193002C78D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24710F80D15AA06451D59D98 /* Pods-TestHaneke.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = TestHaneke/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = bhendricks.TestHaneke;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		773179221C80E193002C78D7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 335CF46F82C93564565BD7B4 /* Pods-TestHaneke.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = TestHaneke/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = bhendricks.TestHaneke;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};
@@ -286,6 +372,7 @@
 				773179221C80E193002C78D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
