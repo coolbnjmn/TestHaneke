@@ -5,6 +5,7 @@ use_frameworks!
 target 'TestHaneke' do
 
 pod 'HanekeSwift'
+pod 'Alamofire'
 
 end
 

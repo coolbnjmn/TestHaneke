@@ -8,17 +8,14 @@
 
 import UIKit
 import Haneke
+import Alamofire
 
 class CachingManager: NSObject {
     static let sharedInstance : CachingManager = CachingManager()
-    
+
     func fetchAllThings(completion: ([AnyObject] -> Void)?) {
-        let fetchingBlock : ()->JSON = {
-            
-            return JSON.Array(["hi"])
-        }
-        let fetcher = CustomFetcher<JSON>(key: "HELLO", value: fetchingBlock())
-                    // make a network request here for the value
+
+        let fetcher = CustomFetcher<JSON>(key: "HELLO")
 
         fetcher.fetch(failure: {
             error in
@@ -31,18 +28,24 @@ class CachingManager: NSObject {
 }
 
 
-class CustomFetcher<T : DataConvertible> : Fetcher<T> {
+class CustomFetcher<T : DataConvertible> : Fetcher<JSON> {
 
-    let getValue : () -> T.Result
+    override init(key: String) {
 
-    init(key: String, @autoclosure(escaping) value getValue : () -> T.Result) {
-        self.getValue = getValue
         super.init(key: key)
     }
 
-    override func fetch(failure fail: ((NSError?) -> ()), success succeed: (T.Result) -> ()) {
-        let value = getValue()
-        succeed(value)
+    override func fetch(failure fail: ((NSError?) -> ()), success succeed: (JSON) -> ()) {
+        let endpoint = "www.google.com"
+        Alamofire.request(.GET, endpoint, parameters: nil, encoding: .URL, headers: nil)
+            .responseJSON {
+                (data) -> Void in
+                self.onReceiveData(data.data!, failure: fail, success: succeed)
+        }
+    }
+
+    private func onReceiveData(data: NSData, failure: ((NSError?) -> ()), success: (JSON) -> ()) {
+        success(JSON.Array(["HI"]))
     }
 
     override func cancelFetch() {}
